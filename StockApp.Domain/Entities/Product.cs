@@ -9,6 +9,7 @@ namespace StockApp.Domain.Entities
 {
     public class Product
     {
+
         #region Atributos
         public int Id { get; set; }
         public string Name { get; set; }
@@ -30,8 +31,6 @@ namespace StockApp.Domain.Entities
             Id= id;
             ValidateDomain(name, description, price, stock, image);
         }
-
-
 
         public Category Category { get; set; }
 
