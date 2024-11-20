@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using StockApp.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StockApp.Infra.Data.EntityConfiguration
 {
@@ -15,6 +10,10 @@ namespace StockApp.Infra.Data.EntityConfiguration
         {
             builder.HasKey(t => t.Id);
             builder.Property(t => t.Name).HasMaxLength(100).IsRequired();
+
+            builder.HasMany(c => c.Products)
+              .WithOne(p => p.Category)
+              .HasForeignKey(p => p.CategoryId);
 
             builder.HasData(
                 new Category(1, "Material Escolar"),
