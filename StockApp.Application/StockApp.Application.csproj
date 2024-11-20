@@ -8,6 +8,7 @@
   
   <ItemGroup>
     <ProjectReference Include="..\StockApp.Domain\StockApp.Domain.csproj" />
+    <ProjectReference Include="..\StockApp.Infra.Data\StockApp.Infra.Data.csproj" />
   </ItemGroup>
   
   <ItemGroup>
