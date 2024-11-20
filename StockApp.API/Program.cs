@@ -8,6 +8,7 @@ internal class Program
 
         // Add services to the container.
         builder.Services.AddInfrastructureAPI(builder.Configuration);
+        builder.Services.AddSingleton<ICloudBackupService, CloudBackupService>();
 
         builder.Services.AddControllers();
 
