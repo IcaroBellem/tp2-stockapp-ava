@@ -26,6 +26,8 @@ namespace StockApp.Infra.IoC
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IFinancialManagementService, FinancialManagementService>();
+            services.AddMemoryCache();
+            services.AddScoped<IMfaService, MfaService>();
 
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
